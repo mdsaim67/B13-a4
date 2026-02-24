@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            font-family:
+                "San Francisco"
+                "PingFang SC"
+                "Noto sans SC"
+                "Microsoft YaHei";
+        }
+    </style>
+
+</head>
+
+<body class="bg-base-200 min-h-screen p-4">
+
+    <div class="max-w-6xl mx-auto">
+
+
+        <h1 class="text-3xl font-bold mb-6">Job Application Tracker</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="stat bg-base-100 shadow rounded-box">
+                <div class="stat-title">Total</div>
+                <div id="totalCount" class="stat-value">8</div>
+            </div>
+            <div class="stat bg-base-100 shadow rounded-box">
+                <div class="stat-title text-success">Interview</div>
+                <div id="interviewCount" class="stat-value text-success">0</div>
+            </div>
+            <div class="stat bg-base-100 shadow rounded-box">
+                <div class="stat-title text-error">Rejected</div>
+                <div id="rejectedCount" class="stat-value text-error">0</div>
+            </div>
+        </div>
+
+
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold">Available Jobs</h2>
+            <span id="tabCount" class="font-medium">8 jobs</span>
+        </div>
+
+
+        <div class=" tabs tabs-boxed flex mb-6">
+            <button class="tab tab-active" data-tab="all">All</button>
+            <button class="tab" data-tab="interview">Interview</button>
+            <button class="tab" data-tab="rejected">Rejected</button>
+        </div>
+
+
+        <div id="jobContainer" class="space-y-4">
+
+            <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                <div class="card-body">
+
+
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h2 class="text-lg font-bold text-gray-800">
+                                Mobile First Corp
+                            </h2>
+                            <p class="text-gray-600">React Native Developer</p>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Remote • Full-time • $130,000 - $175,000
+                            </p>
+                        </div>
+
+
+                        <button class="btn btn-sm  btn-outline delete-btn"><i
+                                class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+
+                    <div class="mt-4">
+                        <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">
+                            NOT APPLIED
+                        </span>
+                    </div>
+
+
+                    <p class="mt-4 text-gray-600">
+                        Build cross-platform mobile applications using React Native.
+                        Work on products used by millions of users worldwide.
+                    </p>
+
+
+                    <div class="mt-5 flex gap-3">
+                        <button class="btn btn-sm btn-outline btn-success interview-btn">
+                            INTERVIEW
+                        </button>
+
+                        <button class="btn btn-sm btn-outline btn-error rejected-btn">
+                            REJECTED
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-gray-800">Tech Innovators Inc</h2>
+                                        <p class="text-gray-600">Full Stack Developer</p>
+                                        <p class="text-sm text-gray-500 mt-1">New York • Hybrid • $120,000 - $160,000</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">NOT APPLIED</span>
+                                </div>
+                                <p class="mt-4 text-gray-600">Develop scalable web applications using modern frameworks. Collaborate with talented engineers to deliver quality solutions.</p>
+                                <div class="mt-5 flex gap-3">
+                                    <button class="btn btn-sm btn-outline btn-success interview-btn">INTERVIEW</button>
+                                    <button class="btn btn-sm btn-outline btn-error rejected-btn">REJECTED</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-gray-800">Cloud Systems Ltd</h2>
+                                        <p class="text-gray-600">DevOps Engineer</p>
+                                        <p class="text-sm text-gray-500 mt-1">San Francisco • Remote • $140,000 - $180,000</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">NOT APPLIED</span>
+                                </div>
+                                <p class="mt-4 text-gray-600">Manage cloud infrastructure and deployment pipelines. Optimize system performance and ensure reliability at scale.</p>
+                                <div class="mt-5 flex gap-3">
+                                    <button class="btn btn-sm btn-outline btn-success interview-btn">INTERVIEW</button>
+                                    <button class="btn btn-sm btn-outline btn-error rejected-btn">REJECTED</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-gray-800">AI Solutions Corp</h2>
+                                        <p class="text-gray-600">Machine Learning Engineer</p>
+                                        <p class="text-sm text-gray-500 mt-1">Boston • On-site • $150,000 - $200,000</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">NOT APPLIED</span>
+                                </div>
+                                <p class="mt-4 text-gray-600">Build and train machine learning models. Research cutting-edge AI technologies and implement intelligent solutions.</p>
+                                <div class="mt-5 flex gap-3">
+                                    <button class="btn btn-sm btn-outline btn-success interview-btn">INTERVIEW</button>
+                                    <button class="btn btn-sm btn-outline btn-error rejected-btn">REJECTED</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-gray-800">Web Design Studios</h2>
+                                        <p class="text-gray-600">Frontend Engineer</p>
+                                        <p class="text-sm text-gray-500 mt-1">Los Angeles • Remote • $110,000 - $150,000</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">NOT APPLIED</span>
+                                </div>
+                                <p class="mt-4 text-gray-600">Create beautiful and responsive user interfaces. Work with designers and backend teams to build amazing web experiences.</p>
+                                <div class="mt-5 flex gap-3">
+                                    <button class="btn btn-sm btn-outline btn-success interview-btn">INTERVIEW</button>
+                                    <button class="btn btn-sm btn-outline btn-error rejected-btn">REJECTED</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-gray-800">Data Analytics Pro</h2>
+                                        <p class="text-gray-600">Data Scientist</p>
+                                        <p class="text-sm text-gray-500 mt-1">Chicago • Hybrid • $125,000 - $165,000</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">NOT APPLIED</span>
+                                </div>
+                                <p class="mt-4 text-gray-600">Analyze complex datasets and extract actionable insights. Develop predictive models and data visualization solutions.</p>
+                                <div class="mt-5 flex gap-3">
+                                    <button class="btn btn-sm btn-outline btn-success interview-btn">INTERVIEW</button>
+                                    <button class="btn btn-sm btn-outline btn-error rejected-btn">REJECTED</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-gray-800">Mobile Apps Studio</h2>
+                                        <p class="text-gray-600">iOS Developer</p>
+                                        <p class="text-sm text-gray-500 mt-1">Seattle • Remote • $135,000 - $175,000</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">NOT APPLIED</span>
+                                </div>
+                                <p class="mt-4 text-gray-600">Develop high-performance iOS applications. Write clean code and collaborate with product managers to create amazing apps.</p>
+                                <div class="mt-5 flex gap-3">
+                                    <button class="btn btn-sm btn-outline btn-success interview-btn">INTERVIEW</button>
+                                    <button class="btn btn-sm btn-outline btn-error rejected-btn">REJECTED</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-base-100 border shadow-sm rounded-xl job-card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-gray-800">Security First Systems</h2>
+                                        <p class="text-gray-600">Security Engineer</p>
+                                        <p class="text-sm text-gray-500 mt-1">Washington DC • On-site • $145,000 - $190,000</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="status-badge px-3 py-1 text-xs rounded bg-gray-100 text-gray-700">NOT APPLIED</span>
+                                </div>
+                                <p class="mt-4 text-gray-600">Ensure system security and protect against cyber threats. Implement security best practices and conduct vulnerability assessments.</p>
+                                <div class="mt-5 flex gap-3">
+                                    <button class="btn btn-sm btn-outline btn-success interview-btn">INTERVIEW</button>
+                                    <button class="btn btn-sm btn-outline btn-error rejected-btn">REJECTED</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+        </div>
+
+
+        <div id="emptyState" class="hidden">
+            <div class="card bg-base-100 shadow text-center p-10">
+                <div class="mx-auto mb-3"><img src="/jobs.png" alt="" srcset=""></div>
+                <h3 class="font-semibold">No jobs available</h3>
+                <p class="text-sm text-gray-500">
+                    There are no jobs in this category
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
