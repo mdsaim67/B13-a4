@@ -49,11 +49,11 @@ function filterJobs() {
     if (currentTab === "all") {
       card.style.display = "block";
       visible++;
-    } 
+    }
     else if (status === currentTab) {
       card.style.display = "block";
       visible++;
-    } 
+    }
     else {
       card.style.display = "none";
     }
@@ -85,7 +85,7 @@ document.addEventListener("click", function (e) {
   if (e.target.classList.contains("interview-btn")) {
 
     const card = e.target.closest(".job-card");
-      const badgeStatus = card.querySelector('.status-badge')
+    const badgeStatus = card.querySelector('.status-badge')
     if (card.dataset.status === "interview") {
       card.dataset.status = "none";
     } else {
@@ -100,14 +100,14 @@ document.addEventListener("click", function (e) {
 
 
   if (e.target.classList.contains("rejected-btn")) {
-const card = e.target.closest(".job-card");
-      const badgeStatus = card.querySelector('.status-badge')
+    const card = e.target.closest(".job-card");
+    const badgeStatus = card.querySelector('.status-badge')
     if (card.dataset.status === "rejected") {
       card.dataset.status = "none";
     } else {
       card.dataset.status = "rejected";
       badgeStatus.textContent = 'Rejected';
-        badgeStatus.className = 'status-badge px-3 py-1 text-xs rounded bg-red-100 text-red-700'
+      badgeStatus.className = 'status-badge px-3 py-1 text-xs rounded bg-red-100 text-red-700'
 
     }
 
@@ -115,7 +115,7 @@ const card = e.target.closest(".job-card");
     filterJobs();
   }
 
- 
+
   if (e.target.classList.contains("delete-btn")) {
     const card = e.target.closest(".job-card");
     card.remove();
