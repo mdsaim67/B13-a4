@@ -114,8 +114,7 @@ document.addEventListener("click", function (e) {
 
     filterJobs();
   }
-
-
+  
   if (e.target.closest(".delete-btn")) {
 
     const card = e.target.closest(".job-card");
