@@ -30,11 +30,11 @@ function updateCounts() {
   rejectedCount.textContent = rejected;
 
   if (currentTab === "all") {
-    tabCount.textContent = total + " jobs";
+    tabCount.textContent = total + " Jobs";
   } else if (currentTab === "interview") {
-    tabCount.textContent = interviewCount.textContent + " of " + total + " jobs";
+    tabCount.textContent = interviewCount.textContent + " of " + total + " Jobs";
   } else {
-    tabCount.textContent = rejectedCount.textContent + " of " + total + " jobs";
+    tabCount.textContent = rejectedCount.textContent + " of " + total + " Jobs";
   }
 }
 
@@ -116,13 +116,14 @@ document.addEventListener("click", function (e) {
   }
 
 
-  if (e.target.classList.contains("delete-btn")) {
+  if (e.target.closest(".delete-btn")) {
+
     const card = e.target.closest(".job-card");
+
     card.remove();
     filterJobs();
   }
 
-});
-
+});  
 
 updateCounts();
